@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Food Waste Management - Reduce food waste by connecting restaurants with charities.">
+  <title>Food Waste Management</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#home" aria-current="page">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="loginBtn" class="btn">Log In</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" aria-labelledby="hero-heading">
+    <div class="hero-content">
+      <h1 id="hero-heading">Reduce Food Waste, Feed the Needy</h1>
+      <p>Join us in the fight against food waste. Connect restaurants with charities to make a difference.</p>
+      <div class="cta-buttons">
+        <button id="signUpRestaurant" class="btn">Sign Up as Restaurant</button>
+        <button id="signUpCharity" class="btn">Sign Up as Charity</button>
+        <button id="signUpCustomer" class="btn">Sign Up as Customer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Food Waste Management is a platform dedicated to reducing food waste by connecting restaurants, charities, and customers. Our mission is to ensure that surplus food reaches those in need while promoting sustainability.</p>
+    <p>With our easy-to-use platform, restaurants can post surplus food, charities can claim donations, and customers can participate in reducing food waste. Together, we can make a difference!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like to collaborate, feel free to reach out to us at <a href="mailto:info@foodwastemanagement.com">info@foodwastemanagement.com</a>.</p>
+  </section>
+
+  <!-- Sign-Up Form (Hidden by Default) -->
+  <div id="signUpFormContainer" class="form-container">
+    <div class="form-overlay"></div>
+    <form id="signUpForm" class="form">
+      <span id="closeSignUpForm" class="close-btn">&times;</span>
+      <h2>Sign Up</h2>
+      <label for="userType">Sign Up As:</label>
+      <select id="userType" name="userType" required>
+        <option value="restaurant">Restaurant</option>
+        <option value="charity">Charity</option>
+        <option value="customer">Customer</option>
+      </select>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+  </div>
+
+  <!-- Log In Form (Hidden by Default) -->
+  <div id="loginFormContainer" class="form-container">
+    <div class="form-overlay"></div>
+    <form id="loginForm" class="form">
+      <span id="closeLoginForm" class="close-btn">&times;</span>
+      <h2>Log In</h2>
+      <label for="loginEmail">Email:</label>
+      <input type="email" id="loginEmail" name="loginEmail" required>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="loginPassword" required>
+      <button type="submit" class="btn">Log In</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="visually-hidden">Footer</h2>
+    <p>&copy; 2023 Food Waste Management. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

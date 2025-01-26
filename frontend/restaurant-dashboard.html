@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Restaurant Dashboard - Manage food donations and requests.">
+  <title>Restaurant Dashboard</title>
+  <link rel="stylesheet" href="restaurant-dashboard.css">
+</head>
+<body>
+  <!-- Side Navigation -->
+  <aside class="side-nav">
+    <h2>Dashboard</h2>
+    <nav aria-label="Side navigation">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#donations">Donations</a></li>
+        <li><a href="#requests">Requests</a></li>
+        <li><a href="#history">Donation History</a></li>
+        <li><a href="#analytics">Analytics</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Home Section -->
+    <section id="home" class="content-section active">
+      <h2>Welcome to Your Dashboard</h2>
+      <p>Manage your food donations, track requests, and view analytics to reduce food waste effectively.</p>
+    </section>
+
+    <section id="orders" class="content-section">
+      <h2>Orders</h2>
+      <div id="orderList" class="order-list">
+        <!-- Orders will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Donations Section -->
+    <section id="donations" class="content-section">
+      <h2>Post a Donation</h2>
+      <form id="donationForm">
+        <label for="foodType">Food Type:</label>
+        <input type="text" id="foodType" name="foodType" required>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <label for="expirationTime">Expiration Time:</label>
+        <input type="datetime-local" id="expirationTime" name="expirationTime" required>
+        <label for="pickupLocation">Pickup Location:</label>
+        <input type="text" id="pickupLocation" name="pickupLocation" required>
+        <button type="submit" class="btn">Post Donation</button>
+      </form>
+    </section>
+
+<section id="requests" class="content-section">
+  <h2>Donation Requests</h2>
+  <div id="requestList" class="request-list">
+    <!-- Requests will be dynamically added here -->
+  </div>
+
+</section>
+
+
+
+    <!-- Donation History Section -->
+    <section id="history" class="content-section">
+      <h2>Donation History</h2>
+      <div id="donationHistory" class="donation-history">
+        <!-- Donation history will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Orders Section -->
+
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="content-section">
+      <h2>Analytics</h2>
+      <div class="analytics-content">
+        <div class="metric">
+          <h3>Total Donations</h3>
+          <p id="totalDonations">0</p>
+        </div>
+        <div class="metric">
+          <h3>Total Food Saved</h3>
+          <p id="totalFoodSaved">0 kg</p>
+        </div>
+        <div class="metric">
+          <h3>Requests Fulfilled</h3>
+          <p id="requestsFulfilled">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings Section -->
+<section id="settings" class="content-section">
+  <h2>Settings</h2>
+  <form id="settingsForm">
+    <!-- Restaurant Profile -->
+    <div class="form-group">
+      <label for="restaurantName">Restaurant Name:</label>
+      <input type="text" id="restaurantName" name="restaurantName" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="profilePicture">Profile Picture:</label>
+      <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+    </div>
+    <div class="form-group">
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio" rows="4" placeholder="Tell us about your restaurant..."></textarea>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="form-group">
+      <label for="darkMode">Dark Mode:</label>
+      <input type="checkbox" id="darkMode" name="darkMode">
+    </div>
+
+    <!-- Save Changes Button -->
+    <button type="submit" class="btn">Save Changes</button>
+  </form>
+</section>
+  </main>
+
+  <script src="restaurant-dashboard.js"></script>
+</body>
+</html>
