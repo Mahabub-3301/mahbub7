@@ -9,11 +9,15 @@
 </head>
 <body>
   <!-- Side Navigation -->
-  <aside class="side-nav">
+  <a class="side-btn" id="side-btn" >menu</a>
+  <aside class="side-nav" id="side-nav">
     <h2>Dashboard</h2>
+    <span id="closeSignUpForm" class="close-btn">&times;</span>
+    
     <nav aria-label="Side navigation">
       <ul>
         <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#orders">Orders</a></li>
         <li><a href="#donations">Donations</a></li>
         <li><a href="#requests">Requests</a></li>
         <li><a href="#history">Donation History</a></li>
@@ -26,10 +30,62 @@
   <!-- Main Content -->
   <main class="main-content">
     <!-- Home Section -->
-    <section id="home" class="content-section active">
-      <h2>Welcome to Your Dashboard</h2>
-      <p>Manage your food donations, track requests, and view analytics to reduce food waste effectively.</p>
-    </section>
+    <!-- Home Section -->
+<section id="home" class="content-section active">
+  <h2>Welcome to Your Dashboard</h2>
+  <p>Manage your food donations, track requests, and view analytics to reduce food waste effectively.</p>
+
+  <!-- Highlight Card -->
+  <div class="highlight-card">
+    <h3>Your Profile</h3>
+    <div class="profile-info">
+      <img src="default-profile.jpg" alt="Profile Picture" id="profilePicturePreview">
+      <div>
+        <p><strong>Restaurant Name:</strong> <span id="restaurantNameDisplay">Delicious Bites</span></p>
+        <p><strong>Email:</strong> <span id="emailDisplay">info@deliciousbites.com</span></p>
+        <p><strong>Bio:</strong> <span id="bioDisplay">Serving the community with love and delicious food!</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics Card -->
+  <div class="analytics-card">
+    <h3>Analytics</h3>
+    <div class="metrics">
+      <div class="metric">
+        <h4>Total Donations</h4>
+        <p id="totalDonations">12</p>
+      </div>
+      <div class="metric">
+        <h4>Total Food Saved</h4>
+        <p id="totalFoodSaved">50 kg</p>
+      </div>
+      <div class="metric">
+        <h4>Requests Fulfilled</h4>
+        <p id="requestsFulfilled">8</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Cards -->
+  <div class="history-cards">
+    <!-- Recent Orders -->
+    <div class="history-card">
+      <h3>Recent Orders</h3>
+      <div id="recentOrders" class="history-list">
+        <!-- Orders will be dynamically added here -->
+      </div>
+    </div>
+
+    <!-- Recent Donations -->
+    <div class="history-card">
+      <h3>Recent Donations</h3>
+      <div id="recentDonations" class="history-list">
+        <!-- Donations will be dynamically added here -->
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="orders" class="content-section">
       <h2>Orders</h2>

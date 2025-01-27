@@ -3,6 +3,22 @@ document.addEventListener('DOMContentLoaded',()=>{
   // DOM Elements
 const sideNavLinks = document.querySelectorAll('.side-nav a');
 const contentSections = document.querySelectorAll('.content-section');
+const closenav = document.getElementById('closeSignUpForm');
+const opennav = document.getElementById('side-btn');
+
+function closenavHandler() {
+  document.getElementById('side-nav').style.display = 'none';
+  opennav.style.display = 'flex' // Show the open button
+}
+
+function opennavHandler() {
+  document.getElementById('side-nav').style.display = 'flow';
+  opennav.style.display = 'none'; // Hide the open button
+}
+
+
+closeSignUpForm.addEventListener('click', closenavHandler);
+opennav.addEventListener('click', opennavHandler);
 
 // Function to switch between sections
 function switchSection(event) {
@@ -20,6 +36,68 @@ function switchSection(event) {
 
 // Event Listeners
 sideNavLinks.forEach(link => link.addEventListener('click', switchSection));
+
+
+// Sample data for the Home section
+const restaurantProfile = {
+  name: "Delicious Bites",
+  email: "info@deliciousbites.com",
+  bio: "Serving the community with love and delicious food!",
+  profilePicture: "default-profile.jpg"
+};
+
+const analytics = {
+  totalDonations: 12,
+  totalFoodSaved: 50, // in kg
+  requestsFulfilled: 8
+};
+
+const recentOrders = [
+  { id: 1, foodType: 'Pizza', quantity: 2, customer: 'John Doe', status: 'Completed' },
+  { id: 2, foodType: 'Burger', quantity: 3, customer: 'Jane Smith', status: 'Pending' }
+];
+
+const recentDonations = [
+  { id: 1, foodType: 'Sandwiches', quantity: 20, charity: 'Charity A', date: '2023-10-01' },
+  { id: 2, foodType: 'Salads', quantity: 15, charity: 'Charity B', date: '2023-10-05' }
+];
+
+// Function to render the Home section
+function renderHome() {
+  // Update profile info
+  document.getElementById('restaurantNameDisplay').textContent = restaurantProfile.name;
+  document.getElementById('emailDisplay').textContent = restaurantProfile.email;
+  document.getElementById('bioDisplay').textContent = restaurantProfile.bio;
+  document.getElementById('profilePicturePreview').src = restaurantProfile.profilePicture;
+
+  // Update analytics
+  document.getElementById('totalDonations').textContent = analytics.totalDonations;
+  document.getElementById('totalFoodSaved').textContent = `${analytics.totalFoodSaved} kg`;
+  document.getElementById('requestsFulfilled').textContent = analytics.requestsFulfilled;
+
+  // Render recent orders
+  const recentOrdersList = document.getElementById('recentOrders');
+  recentOrdersList.innerHTML = recentOrders.map(order => `
+    <div class="order-card">
+      <h4>${order.foodType} (${order.quantity})</h4>
+      <p>Customer: ${order.customer}</p>
+      <p>Status: ${order.status}</p>
+    </div>
+  `).join('');
+
+  // Render recent donations
+  const recentDonationsList = document.getElementById('recentDonations');
+  recentDonationsList.innerHTML = recentDonations.map(donation => `
+    <div class="donation-card">
+      <h4>${donation.foodType} (${donation.quantity})</h4>
+      <p>Charity: ${donation.charity}</p>
+      <p>Date: ${donation.date}</p>
+    </div>
+  `).join('');
+}
+
+// Initial render
+renderHome();
 
 // Sample data for requests and donation history
 const requests = [

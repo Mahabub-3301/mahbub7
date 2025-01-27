@@ -15,6 +15,7 @@ body {
   height: 100vh;
   padding: 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flow;
 }
 
 .side-nav h2 {
@@ -46,6 +47,40 @@ body {
   background: #3498db;
 }
 
+.side-btn{
+  padding: 10px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3498db;
+  writing-mode: vertical-rl;
+  color: #ffffff;
+  border: none;
+  display: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.hidden {
+  display: none; /* Class to hide the element */
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  left: auto;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ddd;
+  background: none;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
 /* Main Content */
 .main-content {
   flex: 1;
@@ -59,6 +94,128 @@ body {
 
 .content-section.active {
   display: block;
+}
+
+/* Home Section */
+#home {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card,
+.analytics-card,
+.history-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.highlight-card h3,
+.analytics-card h3,
+.history-card h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3498db;
+}
+
+.profile-info p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.metrics {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.metric {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.metric h4 {
+  margin: 0 0 0.5rem 0;
+  color: #3498db;
+}
+
+.metric p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.history-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.history-card {
+  flex: 1;
+  min-width: 300px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.history-list .order-card,
+.history-list .donation-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-list h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.history-list p {
+  margin: 0;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metrics {
+    flex-direction: column;
+  }
+
+  .history-cards {
+    flex-direction: column;
+  }
 }
 
 /* Donation Form */
